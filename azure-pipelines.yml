@@ -34,7 +34,6 @@ stages:
 
     - script: |
         python -m pip install --upgrade databricks-cli
-        databricks jobs configure --version=2.1
       displayName: 'Install dependencies'
 
     - script: |
@@ -46,6 +45,7 @@ stages:
       displayName: 'Update Staging environment'
 
     - script: |
+          databricks jobs configure --version=2.1
           JOB_ID=$(databricks jobs create --json-file jobs/create-train-job.json | jq .job_id)
           RUN_ID=$(databricks jobs run-now --job-id $JOB_ID | jq '.run_id')
 
