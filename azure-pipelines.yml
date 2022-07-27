@@ -2,8 +2,8 @@ resources:
   repositories:
   - repository: azure-databricks-mlops # The name used to reference this repository in the checkout step
     type: github
-    endpoint: lfbraz
-    name: lfbraz/azure-databricks-mlops
+    endpoint: laryxm
+    name: laryxm/azure-databricks-mlops
 
 variables:
 - group: 'databricks'
